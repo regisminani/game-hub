@@ -12,11 +12,12 @@ export interface Game {
     id: number;
     name: string;
     background_image: string;
-    parent_platforms: {platform: Platform}[]
+    parent_platforms: {platform: Platform}[];
+    metacritic: number;
 }
 interface FetchGamesResponse {
     count: number;
-    results: Game[]
+    results: Game[];
 }
 const useGames = () => {
     const controller = new AbortController();
@@ -32,7 +33,7 @@ const useGames = () => {
         })
 
         return ()=> controller.abort();
-    }, [])
+    }, []);
     return {games, error}
 }
 
