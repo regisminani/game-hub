@@ -1,4 +1,4 @@
-import { Grid, GridItem} from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
@@ -10,15 +10,19 @@ function App() {
         base: `"nav" "main"`,
         lg: `"nav nav" "aside main"`,
       }}
+      templateColumns={{
+        base: "fr",
+        lg: "200px 1fr",
+      }}
     >
       <GridItem area="nav">
         <NavBar />
       </GridItem>
-      <GridItem hideBelow={"lg"} area="aside">
-        <GenreList/>
+      <GridItem hideBelow={"lg"} area="aside" paddingX={5}>
+        <GenreList />
       </GridItem>
       <GridItem area="main">
-        <GameGrid/>
+        <GameGrid />
       </GridItem>
     </Grid>
   );
