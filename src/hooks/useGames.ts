@@ -20,14 +20,14 @@ interface FetchGamesResponse {
     results: Game[];
 }
 const useGames = () => {
-    const controller = new AbortController();
     const [games, setGames] = useState<Game[]>([])
     const [error, setError] = useState('')
     const [isLoading, setLoading] = useState(false)
-
+    
     useEffect(()=>{
+        const controller = new AbortController();
         setLoading(true)
-        apiClient.get<FetchGamesResponse>("/games")
+        apiClient.get<FetchGamesResponse>("/games", {signal: controller.signal})
         .then(res=>{setGames(res.data.results);
             setLoading(false);
         })
