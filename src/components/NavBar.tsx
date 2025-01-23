@@ -2,11 +2,16 @@ import { Flex, HStack, Image, Text } from "@chakra-ui/react";
 import logo from "../assets/logo.jpg";
 import { ColorModeButton } from "./ui/color-mode";
 import SearchInput from "./SearchInput";
-const NavBar = () => {
+
+interface Props {
+    onSearch: (searchText: string) => void
+}
+
+const NavBar = ({onSearch}:Props) => {
   return (
     <Flex  padding={"10px"}>
       <Image rounded={"xl"} src={logo} boxSize={"60px"} />
-      <SearchInput />
+      <SearchInput onSearch={onSearch} />
       <HStack>
         <ColorModeButton />
         <Text>Darkmode</Text>
