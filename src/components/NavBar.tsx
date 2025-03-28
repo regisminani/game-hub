@@ -9,12 +9,11 @@ interface Props {
 
 const NavBar = ({onSearch}:Props) => {
   return (
-    <Flex  padding={"10px"}>
+    <Flex  padding={"10px"} alignItems={'center'}>
       <Image rounded={"xl"} src={logo} boxSize={"60px"} />
       <SearchInput onSearch={onSearch} />
       <HStack>
         <ColorModeButton />
-        <Text>Darkmode</Text>
       </HStack>
     </Flex>
   );
