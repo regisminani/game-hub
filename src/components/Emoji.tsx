@@ -14,7 +14,7 @@ const Emoji = ({rating}:Props) => {
         4: {src: thumbsUp, alt: 'recommended'},
         5: {src: bullsEye, alt: 'exceptional'},
     }
-  return <Image {...emojiMap[rating]} boxSize='25px' marginTop={1} rounded={'l3'}/>;
+  return <Image {...emojiMap[rating]} mixBlendMode={'unset'} boxSize='25px' marginTop={1} rounded={'l3'}/>;
 };
 
 export default Emoji;
