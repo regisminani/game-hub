@@ -1,4 +1,4 @@
-import { Flex, HStack, Image, Text } from "@chakra-ui/react";
+import { Flex, HStack, Image } from "@chakra-ui/react";
 import logo from "../assets/logo.jpg";
 import { ColorModeButton } from "./ui/color-mode";
 import SearchInput from "./SearchInput";
